@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: #252525;
+  min-height: 100vh;
+  line-height: 130%;
+  font-family: 'Inter';
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-height: 100vh;
+  width: min(440px, 90%);
+  margin: auto;
+}
+
+.drag-files {
+  background-color: #f3f0ff;
+  border: 1px dashed #746e82;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+
+  padding: 28px 0 32px;
+}
+
+.drag-files input {
+  all: unset;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.drag-files i.ph {
+  color: #7c3aed;
+  font-size: 48px;
+}
+
+.drag-files h3 {
+  margin-top: 12px;
+  color: #7a5fec;
+  font-weight: 700;
+
+  font-size: 16px;
+}
+
+.drag-files p {
+  margin-top: 2px;
+  font-weight: 400;
+  color: #746e82;
+  font-size: 14px;
+}
+
+.drag-files.dragover {
+  background-color: #c1b2fa;
+}
+
+.files {
+  display: grid;
+  gap: 12px;
+
+  margin-top: 20px;
+}
+
+/* Box */
+
+.box {
+  padding: 8px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 16px #eae2fd;
+  border-radius: 8px;
+
+  display: flex;
+  gap: 12px;
+
+  --icon-bg: #eee;
+  --icon-color: #aaa;
+  --progress-bar: black;
+  --progress-text: #999;
+
+  position: relative;
+}
+
+/* Icon */
+
+.box .icon {
+  background-color: var(--icon-bg);
+  border-radius: 4px;
+  padding: 16px 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box .icon i {
+  font-size: 24px;
+  color: var(--icon-color);
+}
+
+/* info */
+
+.box .info {
+  flex: 1;
+}
+
+.info .filename {
+  font-size: 14px;
+  font-weight: 700;
+  color: #575361;
+}
+
+.info .filesize {
+  font-weight: 700;
+  font-size: 12px;
+  color: #857e95;
+}
+
+/* Progress bar */
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  line-height: 0;
+  margin-top: 4px;
+}
+
+progress {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+  background: #e3e3ed;
+}
+
+progress::-webkit-progress-value {
+  background: var(--progress-bar);
+}
+
+.bar span {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--progress-text);
+}
+
+/* Action */
+
+.action {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  color: #794fed;
+
+  cursor: pointer;
+}
+
+.uploading {
+  --icon-bg: #e9e3f8;
+  --icon-color: #ac96e4;
+  --progress-bar: linear-gradient(
+    90deg,
+    rgba(58, 97, 237, 0.52) 0%,
+    #7c3aed 100%
+  );
+  --progress-text: rgba(152, 146, 166, 1);
+}
+
+.done {
+  --icon-bg: #daf2d9;
+  --icon-color: #73b172;
+  --progress-bar: #73b172;
+  --progress-text: rgba(78, 136, 77, 1);
+}
+
+.error {
+  --icon-bg: #f2d9d9;
+  --icon-color: #e36363;
+  --progress-text: rgba(227, 99, 99, 1);
+}

@@ -14,7 +14,6 @@ buttons.forEach((button) => {
   button.addEventListener('click', (ev) => {
     const parent = button.parentNode
 
-    console.log({ ev, parent })
     parent.remove()
   })
 })
